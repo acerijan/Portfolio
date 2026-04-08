@@ -49,9 +49,9 @@ export default function RainEffect() {
       drops.current = Array.from({ length: Math.min(count, 120) }, () => ({
         x: Math.random() * w,
         y: Math.random() * h,
-        length: 25 + Math.random() * 25,
+        length: 2.5 + Math.random() * 25,
         speed: 1.5 + Math.random() * 4,
-        opacity: 1.3 + Math.random() * 0.08,
+        opacity: 0.3 + Math.random() * 0.08,
       }))
     }
 
