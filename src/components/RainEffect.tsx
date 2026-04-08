@@ -45,11 +45,11 @@ export default function RainEffect() {
     }
 
     const initDrops = (w: number, h: number) => {
-      const count = Math.floor((w * h) / 12000)
+      const count = Math.floor((w * h) / 1200)
       drops.current = Array.from({ length: Math.min(count, 120) }, () => ({
         x: Math.random() * w,
         y: Math.random() * h,
-        length: 2.5 + Math.random() * 25,
+        length: 9.5 + Math.random() * 25,
         speed: 1.5 + Math.random() * 4,
         opacity: 0.3 + Math.random() * 0.08,
       }))
