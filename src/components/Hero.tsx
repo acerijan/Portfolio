@@ -14,8 +14,8 @@ export default function Hero() {
       {/* Ambient glow */}
       <div
         className={`absolute rounded-full blur-[120px] pointer-events-none transition-all duration-[2s] ${isNight
-            ? 'top-1/3 left-1/4 w-[350px] h-[350px] bg-blue-500/5'
-            : 'top-1/4 left-1/3 w-[400px] h-[400px] bg-amber-300/10'
+          ? 'top-1/3 left-1/4 w-[350px] h-[350px] bg-blue-500/5'
+          : 'top-1/4 left-1/3 w-[400px] h-[400px] bg-amber-300/10'
           }`}
       />
 
@@ -39,7 +39,7 @@ export default function Hero() {
           className={`text-4xl sm:text-5xl md:text-6xl font-bold leading-tight transition-colors duration-700 ${isNight ? 'text-white' : 'text-slate-800'
             }`}
         >
-          Rijan Maharjan.
+          Rijan Maharjan
         </motion.h1>
 
         {/* Subtitle */}
@@ -50,7 +50,7 @@ export default function Hero() {
           className={`text-3xl sm:text-4xl md:text-5xl font-bold mt-2 leading-tight transition-colors duration-700 ${isNight ? 'text-slate-500' : 'text-slate-400'
             }`}
         >
-          DevOps Trainee.
+          DevOps Trainee
         </motion.h2>
 
         {/* Description */}
