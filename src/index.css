@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* ===== Night Mode (Default) ===== */
+@theme {
+  --color-bg: #0b0f1a;
+  --color-surface: #111827;
+  --color-surface-light: #1a2332;
+  --color-border: #1e293b;
+  --color-text: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-text-dim: #64748b;
+  --color-accent: #3b82f6;
+  --color-accent-soft: #8b5cf6;
+  --color-accent-muted: rgba(59, 130, 246, 0.1);
+  --color-glow: rgba(59, 130, 246, 0.08);
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+}
+
+/* ===== Base ===== */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+::selection { background: rgba(59, 130, 246, 0.15); color: #fff; }
+
+input:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-accent-muted);
+}
+
+/* ===== Night Mode Body ===== */
+body.night {
+  background-color: #0b0f1a;
+  color: #e2e8f0;
+  cursor: none;
+}
+
+body.night *, body.night *::before, body.night *::after {
+  cursor: none !important;
+}
+
+/* ===== Day Mode Body ===== */
+body.day {
+  background: linear-gradient(180deg, #e0f2fe 0%, #f0f9ff 30%, #fffbeb 70%, #fefce8 100%);
+  color: #1e293b;
+  cursor: none;
+}
+
+body.day *, body.day *::before, body.day *::after {
+  cursor: none !important;
+}
+
+/* ===== Mobile: restore cursor ===== */
+@media (hover: none) and (pointer: coarse) {
+  body, *, *::before, *::after {
+    cursor: auto !important;
+  }
+}
+
+/* ===== Cinematic mode transition ===== */
+body {
+  transition:
+    background-color 1.4s cubic-bezier(0.4, 0, 0.2, 1),
+    background 1.4s cubic-bezier(0.4, 0, 0.2, 1),
+    color 1.0s cubic-bezier(0.4, 0, 0.2, 1);
+}
